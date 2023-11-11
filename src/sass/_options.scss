@@ -1,0 +1,51 @@
+.options {
+  margin-bottom: 3%;
+  &__sliders {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4%;
+    .slider {
+      label {
+        display: block;
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    button {
+      padding: 1%;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      color: white;
+      background-color: $default-color;
+      &:hover {
+        cursor: pointer;
+        background-color: darken($default-color, 20%);
+        transition: 0.4s;
+      }
+    }
+    input[type='color'] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 70px;
+      height: 40px;
+      background-color: transparent;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      &::-webkit-color-swatch {
+        border-radius: 8px;
+        border: 2px solid black;
+      }
+      &::-moz-color-swatch {
+        border-radius: 8px;
+        border: 2px solid black;
+      }
+    }
+  }
+}
