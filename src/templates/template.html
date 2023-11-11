@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Art Generator</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="app">
+        <div class="options">
+          <div class="options__sliders">
+            <div class="slider">
+              <label for="gridWidth">Grid Width</label>
+              <input
+                type="range"
+                id="gridWidth"
+                name="gridWidth"
+                min="0"
+                max="40"
+              />
+            </div>
+            <div class="slider">
+              <label for="gridHeight">Grid Height</label>
+              <input
+                type="range"
+                id="gridHeight"
+                name="gridHeight"
+                min="0"
+                max="40"
+              />
+            </div>
+          </div>
+          <div class="options__buttons">
+            <button class="createGrid">Create Grid</button>
+            <button class="clearGrid">Clear Grid</button>
+            <input type="color" id="colorPicker" value="#000000" />
+            <button class="erase">Erase</button>
+            <button class="paint">Paint</button>
+          </div>
+        </div>
+        <div class="grid"></div>
+      </div>
+    </div>
+  </body>
+</html>
