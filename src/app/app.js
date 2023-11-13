@@ -27,6 +27,22 @@ gridWidth.addEventListener('input', (e) => {
   changeSize(e);
 });
 
+function squareModification(e, d) {
+  if (e.type == 'click') {
+    if (paintFlag) {
+      d.style.backgroundColor = `${colorInput.value}`;
+    } else {
+      d.style.backgroundColor = 'transparent';
+    }
+  } else {
+    if (paintFlag && drawFLag) {
+      d.style.backgroundColor = `${colorInput.value}`;
+    } else if (!paintFlag && drawFLag) {
+      d.style.backgroundColor = 'transparent';
+    }
+  }
+}
+
 function clearGrid() {
   grid.innerHTML = '';
 }
@@ -42,11 +58,29 @@ function createGrid() {
     }
     grid.appendChild(gridColumn);
   }
+  const divArray = document.querySelectorAll('.grid-column div');
+  divArray.forEach((div) => {
+    div.addEventListener('mousemove', (e) => squareModification(e, div));
+    div.addEventListener('click', (e) => squareModification(e, div));
+  });
 }
+let paintFlag = true;
+let drawFLag = false;
 
 const createGridButton = document.querySelector('.create-grid'),
   clearGridButton = document.querySelector('.clear-grid'),
-  grid = document.querySelector('.grid');
+  grid = document.querySelector('.grid'),
+  paintButton = document.querySelector('.paint'),
+  eraseButton = document.querySelector('.erase'),
+  colorInput = document.querySelector('#color-picker');
+
+paintButton.addEventListener('click', () => (paintFlag = true));
+eraseButton.addEventListener('click', () => (paintFlag = false));
+
+grid.addEventListener('mousedown', () => (drawFLag = true));
+grid.addEventListener('mouseup', () => (drawFLag = false));
+grid.addEventListener('mouseleave', () => (drawFLag = false));
+grid.addEventListener('dragstart', (e) => e.preventDefault());
 
 createGridButton.addEventListener('click', createGrid);
 clearGridButton.addEventListener('click', clearGrid);
