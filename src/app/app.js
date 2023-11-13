@@ -26,3 +26,13 @@ gridHeight.addEventListener('input', (e) => {
 gridWidth.addEventListener('input', (e) => {
   changeSize(e);
 });
+
+function clearGrid() {
+  grid.innerHTML = '';
+}
+
+const createGridButton = document.querySelector('.create-grid'),
+  clearGridButton = document.querySelector('.clear-grid'),
+  grid = document.querySelector('.grid');
+
+clearGridButton.addEventListener('click', clearGrid);
