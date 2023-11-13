@@ -1,0 +1,11 @@
+.grid {
+  width: 100%;
+  .grid-column {
+    display: flex;
+    div {
+      width: 1em;
+      height: 1em;
+      border: 1px solid black;
+    }
+  }
+}
