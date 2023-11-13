@@ -30,9 +30,23 @@ gridWidth.addEventListener('input', (e) => {
 function clearGrid() {
   grid.innerHTML = '';
 }
+function createGrid() {
+  grid.innerHTML = '';
+
+  for (let i = 0; i < gridRows; i++) {
+    const gridColumn = document.createElement('div');
+    gridColumn.classList.add('grid-column');
+    for (let j = 0; j < gridColumns; j++) {
+      const div = document.createElement('div');
+      gridColumn.appendChild(div);
+    }
+    grid.appendChild(gridColumn);
+  }
+}
 
 const createGridButton = document.querySelector('.create-grid'),
   clearGridButton = document.querySelector('.clear-grid'),
   grid = document.querySelector('.grid');
 
+createGridButton.addEventListener('click', createGrid);
 clearGridButton.addEventListener('click', clearGrid);
