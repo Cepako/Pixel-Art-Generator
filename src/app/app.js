@@ -62,6 +62,7 @@ function createGrid() {
   divArray.forEach((div) => {
     div.addEventListener('mousemove', (e) => squareModification(e, div));
     div.addEventListener('touchmove', (e) => {
+      e.preventDefault();
       let touch = e.touches[0];
       let touchedElement = document.elementFromPoint(
         touch.clientX,
