@@ -27,6 +27,12 @@
         background-color: darken($default-color, 20%);
         transition: 0.4s;
       }
+      &.active {
+        background-color: #2f4858;
+        &:hover {
+          background-color: lighten(#2f4858, 20%);
+        }
+      }
     }
     input[type='color'] {
       -webkit-appearance: none;
