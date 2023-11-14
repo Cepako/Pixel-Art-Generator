@@ -28,7 +28,7 @@ gridWidth.addEventListener('input', (e) => {
 });
 
 function squareModification(e, d) {
-  if (e.type == 'click') {
+  if (e.type === 'click' || e.type === 'touchstart') {
     if (paintFlag) {
       d.style.backgroundColor = `${colorInput.value}`;
     } else {
@@ -61,6 +61,24 @@ function createGrid() {
   const divArray = document.querySelectorAll('.grid-column div');
   divArray.forEach((div) => {
     div.addEventListener('mousemove', (e) => squareModification(e, div));
+    div.addEventListener('touchmove', (e) => {
+      let touch = e.touches[0];
+      let touchedElement = document.elementFromPoint(
+        touch.clientX,
+        touch.clientY
+      );
+      if (
+        touchedElement !== null &&
+        touchedElement.parentElement.classList.value !== null
+      ) {
+        if (
+          touchedElement &&
+          touchedElement.parentElement.classList.value === 'grid-column'
+        ) {
+          squareModification(e, touchedElement);
+        }
+      }
+    });
     div.addEventListener('click', (e) => squareModification(e, div));
   });
 }
@@ -92,3 +110,7 @@ grid.addEventListener('dragstart', (e) => e.preventDefault());
 
 createGridButton.addEventListener('click', createGrid);
 clearGridButton.addEventListener('click', clearGrid);
+
+grid.addEventListener('touchstart', () => (drawFLag = true));
+grid.addEventListener('touchend', () => (drawFLag = false));
+grid.addEventListener('touchcancel', () => (drawFLag = false));
