@@ -6,6 +6,10 @@
       width: 1em;
       height: 1em;
       border: 1px solid black;
+      @media (max-width: 600px) {
+        width: 0.6em;
+        height: 0.6em;
+      }
     }
   }
 }

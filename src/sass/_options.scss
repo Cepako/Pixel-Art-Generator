@@ -29,9 +29,16 @@
       }
       &.active {
         background-color: #00786d;
+        transition: 0.4s;
         &:hover {
           background-color: darken(#00786d, 10%);
         }
+      }
+      @media (max-width: 1200px) {
+        font-size: 29px;
+      }
+      @media (max-width: 600px) {
+        font-size: 14px;
       }
     }
     input[type='color'] {

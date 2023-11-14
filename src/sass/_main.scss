@@ -15,5 +15,15 @@ body {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    @media (max-width: 1200px) {
+      width: 80%;
+      touch-action: none;
+    }
+    @media (max-width: 600px) {
+      position: relative;
+      width: 95%;
+      padding-bottom: 5%;
+      touch-action: none;
+    }
   }
 }
