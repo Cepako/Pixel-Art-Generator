@@ -74,8 +74,16 @@ const createGridButton = document.querySelector('.create-grid'),
   eraseButton = document.querySelector('.erase'),
   colorInput = document.querySelector('#color-picker');
 
-paintButton.addEventListener('click', () => (paintFlag = true));
-eraseButton.addEventListener('click', () => (paintFlag = false));
+paintButton.addEventListener('click', () => {
+  paintFlag = true;
+  eraseButton.classList.remove('active');
+  paintButton.classList.add('active');
+});
+eraseButton.addEventListener('click', () => {
+  paintFlag = false;
+  eraseButton.classList.add('active');
+  paintButton.classList.remove('active');
+});
 
 grid.addEventListener('mousedown', () => (drawFLag = true));
 grid.addEventListener('mouseup', () => (drawFLag = false));
