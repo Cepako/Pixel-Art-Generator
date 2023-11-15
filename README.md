@@ -8,7 +8,7 @@ Features
 - Creative Process Control: The 'Create Grid', 'Clear Grid', and 'Paint' and 'Erase' buttons allow for easy project management.
 - Simple and Intuitive Navigation: A user-friendly interface ensures a smooth transition between different stages of creation.
 
-![image](https://github.com/Cepako/Pixel-Art-Generator/assets/131913675/5d2f0343-798c-49cb-ac90-455b29978cdb)
+![image](https://github.com/Cepako/Pixel-Art-Generator/assets/131913675/47636991-fe12-4d12-b90f-79de931f9996)
 
 Installation via NPM (Node Package Manager)
 
