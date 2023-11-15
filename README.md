@@ -10,6 +10,11 @@ Features
 
 ![image](https://github.com/Cepako/Pixel-Art-Generator/assets/131913675/47636991-fe12-4d12-b90f-79de931f9996)
 
+Technologies Used
+
+- JavaScript (for frontend functionality)
+- HTML & CSS (for structuring and styling)
+
 Installation via NPM (Node Package Manager)
 
 To install and run the Quiz Application using NPM, follow these steps:
