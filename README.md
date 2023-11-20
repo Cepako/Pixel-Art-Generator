@@ -17,7 +17,7 @@ Technologies Used
 
 Installation via NPM (Node Package Manager)
 
-To install and run the Quiz Application using NPM, follow these steps:
+To install and run the Pixel Art Generator using NPM, follow these steps:
 
 Prerequisites
 - Ensure that Node.js and NPM are installed on your machine. If not, download and install Node.js from the official website.
